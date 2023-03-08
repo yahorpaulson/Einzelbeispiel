@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Einzelbeispiel</string>
+    <string name="matrikelnummer">MatrikelNummer</string>
 </resources>
