@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gib deine Matrikelnummer ein!"
+        android:text="Gib deine Matrikelnummer ein:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         tools:layout_editor_absoluteY="242dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/antwortBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Antwort erhalten"
