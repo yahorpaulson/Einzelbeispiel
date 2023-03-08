@@ -28,8 +28,6 @@ public class MatrikelNummernService extends Thread {
 
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-        matNr = inFromUser.readLine();
-
         outToServer.writeBytes(matNr + '\n');
 
         modified = inFromServer.readLine();
