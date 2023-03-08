@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +13,8 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     EditText txtMatrikelNr;
-    Button antwortBtn;
+    Button btn1;
+    Button btn2;
     TextView antwortTxt = null;
 
     MatrikelNummernService matrikelNummernService;
@@ -31,19 +30,31 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
         
         txtMatrikelNr = findViewById(R.id.editMatrikelNr);
-        antwortBtn = findViewById(R.id.antwortBtn);
+
+        btn1 = findViewById(R.id.antwortBtn1);
+        btn2 = findViewById(R.id.antwortBtn2);
         antwortTxt = findViewById(R.id.antwortTxt);
 
         matrikelNummernService = new MatrikelNummernService();
-
-        antwortBtn.setOnClickListener(
+        btn1.setOnClickListener(
                 view -> {
+                    antwortTxt.setText("");
                     String text = txtMatrikelNr.getText().toString();
                     try {
-                        text = matrikelNummernService.antwortServer(text);
+                        String serverAntwort = matrikelNummernService.antwortServer(
+                                String.valueOf(Integer.parseInt(text)));
+                        antwortTxt.setText(serverAntwort);
+
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
+                }
+        );
+        btn2.setOnClickListener(
+                view -> {
+                    antwortTxt.setText("");
+                    String text = txtMatrikelNr.getText().toString();
+                    text = String.valueOf(matrikelNummernService.checksumCount(text));
                     antwortTxt.setText(text);
                 }
         );
