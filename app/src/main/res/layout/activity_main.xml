@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gib deine Matrikelnummer ein:"
@@ -20,17 +21,21 @@
         android:id="@+id/editMatrikelNr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="242dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/antwortBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="236dp"
         android:text="Antwort erhalten"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
